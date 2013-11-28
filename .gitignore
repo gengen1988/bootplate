@@ -28,5 +28,10 @@ proguard/
 *.iws
 .idea/
 
+###
+
+# build files
+build/
+
 # OS files
 .directory
