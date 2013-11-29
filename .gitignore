@@ -32,7 +32,7 @@ proguard/
 
 # build files
 build/
-cordova/platform/
+cordova/platforms/
 .sass-cache/
 
 # OS files
