@@ -34,6 +34,7 @@ proguard/
 build/
 cordova/platforms/
 cordova/plugins/
+cordova/www/
 .sass-cache/
 
 # OS files
