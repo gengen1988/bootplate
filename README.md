@@ -13,7 +13,8 @@ This template need git and grunt to work. As you come here, I assume you have al
 
 ### Initialize Project ###
 ```bash
-git clone https://github.com/gengen1988/Bootplate.git
+git clone https://github.com/gengen1988/bootplate.git
+cd bootplate
 npm install
 grunt
 ```
