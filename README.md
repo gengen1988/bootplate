@@ -19,6 +19,8 @@ grunt
 
 Usage
 ---------
+Once you complete install, you can import ```bootplate``` folder to Eclipse.
+
 ### Start Debug Server ###
 ```
 grunt serve
@@ -38,5 +40,12 @@ Available Packages
  - cuttingedge
 
 to be complete...
+
+How to build my project to production edition?
+---------
+You need install Android SDK / Cordova / Sencha CMD, config them all and run:
+```
+sencha app build native
+```
 
 Now go ```app```, write your next Fastbook!
