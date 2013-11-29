@@ -4,6 +4,7 @@ Bootplate is a Sencha Touch template. It help developer write and debug Sencha T
 
 Installation
 ---------
+This template need git and grunt to work. As you come here, I assume you have already install git. So you just need install Node.js and grunt-cli before coding.
 
 ### Prerequirements ###
  - git http://git-scm.com/
