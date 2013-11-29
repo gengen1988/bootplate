@@ -14,5 +14,9 @@
   "license": "GPLv3",
   "bugs": {
     "url": "https://github.com/gengen1988/Bootplate/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "express": "~3.4.5"
   }
 }
