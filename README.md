@@ -17,7 +17,7 @@ git clone https://github.com/gengen1988/Bootplate.git
 npm install
 grunt
 ```
-Once you complete install, you can import ```bootplate``` folder to Eclipse.
+Once installation complete, you can import ```bootplate``` folder to Eclipse.
 
 Usage
 ---------
@@ -29,7 +29,7 @@ grunt serve
 ```
 This command start a static file server on 0.0.0.0:1841, you can use it to see you app.
 
-### Install Package ###
+### add libraries / framework / etc ... ###
 ```bash
 grunt install <package-name>
 ```
