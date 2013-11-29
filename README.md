@@ -23,15 +23,17 @@ Usage
 ---------
 Here is some useful command during developing.
 
-### Start Debug Server ###
+### run debug server ###
 ```bash
 grunt serve
 ```
+This command start a static file server on 0.0.0.0:1841, you can use it to see you app.
 
 ### Install Package ###
 ```bash
 grunt install <package-name>
 ```
+This command can install additional package to app.
 
 Available Packages
 ---------
