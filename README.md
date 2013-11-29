@@ -4,7 +4,7 @@ Bootplate is a Sencha Touch template. It help developer write and debug Sencha T
 
 Installation
 ---------
-This template need git and grunt to work. As you come here, I assume you have already install git. So you just need install Node.js and grunt-cli before coding.
+This template need git and grunt to work. As you come here, I assume you have already installed git. So you just need install Node.js and grunt-cli before coding.
 
 ### Prerequirements ###
  - git http://git-scm.com/
@@ -12,7 +12,7 @@ This template need git and grunt to work. As you come here, I assume you have al
  - grunt-cli (npm install -g grunt-cli)
 
 ### Initialize Project ###
-```
+```bash
 git clone https://github.com/gengen1988/Bootplate.git
 npm install
 grunt
@@ -23,12 +23,12 @@ Usage
 Once you complete install, you can import ```bootplate``` folder to Eclipse.
 
 ### Start Debug Server ###
-```
+```bash
 grunt serve
 ```
 
 ### Install Package ###
-```
+```bash
 grunt install <package-name>
 ```
 
@@ -45,7 +45,7 @@ to be complete...
 How to build my project to production edition?
 ---------
 You need install Android SDK / Cordova / Sencha CMD, config them all and run:
-```
+```bash
 sencha app build native
 ```
 
