@@ -8,7 +8,7 @@ Installation
 ### Prerequirements ###
  - git http://git-scm.com/
  - Node.js http://nodejs.org/
- - grunt-cli (npm install grunt-cli)
+ - grunt-cli (npm install -g grunt-cli)
 
 ### Initialize Project ###
 ```
@@ -25,7 +25,9 @@ grunt serve
 ```
 
 ### Install Package ###
+```
 grunt install <package-name>
+```
 
 Available Packages
 ---------
