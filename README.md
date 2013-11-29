@@ -17,10 +17,11 @@ git clone https://github.com/gengen1988/Bootplate.git
 npm install
 grunt
 ```
+Once you complete install, you can import ```bootplate``` folder to Eclipse.
 
 Usage
 ---------
-Once you complete install, you can import ```bootplate``` folder to Eclipse.
+Here is some useful command during developing.
 
 ### Start Debug Server ###
 ```bash
@@ -44,7 +45,7 @@ to be complete...
 
 How to build my project to production edition?
 ---------
-You need install Android SDK / Cordova / Sencha CMD, config them all and run:
+Bootplate is just a RAD template. If you want put it in production use, please install Android SDK / Cordova / Sencha CMD as official ordering, and run:
 ```bash
 sencha app build native
 ```
