@@ -16,7 +16,7 @@ This template need git and grunt to work. As you come here, I assume you have al
 git clone https://github.com/gengen1988/bootplate.git
 cd bootplate
 npm install
-grunt
+grunt init
 ```
 Once installation complete, you can import ```bootplate``` folder to Eclipse.
 
@@ -26,7 +26,7 @@ Here is some useful command during developing.
 
 ### run debug server ###
 ```bash
-grunt serve
+grunt
 ```
 This command start a static file server on 0.0.0.0:1841, you can use it to see you app.
 
