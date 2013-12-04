@@ -1,6 +1,7 @@
 module.exports = function (grunt) {
     var exec = require('child_process').exec;
-
+    var rimraf = require('rimraf');
+    var fs = require('fs');
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -31,6 +32,48 @@ module.exports = function (grunt) {
             done();
     	});
     });
-    
+    grunt.registerTask('install', function (packageName) {
+        var done = this.async();
+        var log = grunt.log.write('adding...');
+        // 创建了一个 Package 文件夹 下载到里面去 
+        rimraf('packages/' + packageName, function (error) {
+            if(error){
+                done(false);
+            }else{
+                child = exec('git clone https://github.com/gengen1988/'+packageName+' packages'+'/'+packageName, function(error, stdout, stderr) {
+                    if(error){
+                        done(false);       
+                    }else{
+                        log.write(packageName);
+                        var parpk = grunt.file.readJSON('app.json');
+                        if (parpk.requires.indexOf(packageName)<0) {
+                            parpk.requires.push(packageName);
+                        };
+                        fs.writeFileSync('app.json', JSON.stringify(parpk), {encoding: 'utf-8'});
+                        done();
+                    }
+                });
+            }
+        });
+    });
+    grunt.registerTask('remove', function (packageName){
+        var done = this.async();
+        var log = grunt.log.write('deleting...'); 
+        rimraf('packages/' + packageName, function (error) {
+            if(error){
+                done(false);
+            }else{
+                log.write(packageName);
+                var parpk = grunt.file.readJSON('app.json');
+                var index = parpk.requires.indexOf(packageName);
+                if (index>=0) {
+                    parpk.requires.splice(index,1);
+                };
+                fs.writeFileSync('app.json', JSON.stringify(parpk), {encoding: 'utf-8'});
+                done();
+                log.ok();
+            }
+        });
+    });
     grunt.registerTask('default', ['connect']);
 };
