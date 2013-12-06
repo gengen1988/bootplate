@@ -37,6 +37,7 @@ cordova/platforms/
 cordova/plugins/
 cordova/www/
 .sass-cache/
+npm-debug.log
 
 # OS files
 .directory
