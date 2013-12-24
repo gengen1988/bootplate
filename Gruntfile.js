@@ -40,7 +40,7 @@ module.exports = function (grunt) {
     	var done = this.async();
     	exec('git submodule update --init', function (err, stdout, stderr) {
     	    if (err) {
-                log.error();
+                log.error(stderr);
                 done(false);
     	        return;
     	    }
