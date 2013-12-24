@@ -2,6 +2,7 @@ module.exports = function (grunt) {
     var exec = require('child_process').exec;
     var rimraf = require('rimraf');
     var fs = require('fs');
+
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -19,61 +20,111 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-connect');
 
+    var registry = grunt.file.readJSON('registry.json');
+    var readApp = function (method) {
+        var filename = 'app.json'
+        var app = grunt.file.readJSON(filename);
+        method(app);
+    };
+
+    var editApp = function (method) {
+        var filename = 'app.json';
+        readApp(function (app) {
+            method(app);
+            fs.writeFileSync(filename, JSON.stringify(app, null, 4));
+        });
+    };
+
     grunt.registerTask('init', function () {
     	var log = grunt.log.write('Installing touch library ...');
     	var done = this.async();
     	exec('git submodule update --init', function (err, stdout, stderr) {
     	    if (err) {
                 log.error();
-                done();
+                done(false);
     	        return;
     	    }
             log.ok();
             done();
     	});
     });
+
+    grunt.registerTask('register', function (packageName) {
+        var log = grunt.log.write('add ' + packageName + ' to app.json...');
+        editApp(function (app) {
+            if (app.requires.indexOf(packageName) < 0) {
+                app.requires.push(packageName);
+            }
+        });
+        log.ok();
+    });
+
+    grunt.registerTask('unregister', function (packageName) {
+        var log = grunt.log.write('remove ' + packageName + ' from app.json...');
+        editApp(function (app) {
+            var index = app.requires.indexOf(packageName);
+            if (!(index < 0)) {
+                app.requires.splice(index, 1);
+            };
+        });
+        log.ok();
+    });
+
+    grunt.registerTask('refresh', function () {
+        var log = grunt.log.write('refreshing sencha app...');
+        var done = this.async();
+        exec('sencha app refresh', function (err, stdout, stderr) {
+            if (err) {
+                done(false);
+                return;
+            }
+            log.ok();
+            done();
+        });
+    });
+
+    grunt.registerTask('download', function (packageName) {
+        var log = grunt.log.write('download ' + packageName + '...');
+        var done = this.async();
+        exec('git clone ' + registry[packageName] + ' packages/' + packageName, function (err, stdout, stderr) {
+            if (err) {
+                done(false);
+                return;
+            }
+            log.ok();
+            done();
+        });
+    });
+
+    grunt.registerTask('delete', function (packageName) {
+        var log = grunt.log.write('delete ' + packageName + '...');
+        var done = this.async();
+        rimraf('packages/' + packageName, function (err) {
+            if (err) {
+                done(false);
+                return;
+            }
+            log.ok();
+            done();
+        });
+    });
+
+    grunt.registerTask('ls', function () {
+        var log = grunt.log.writeln('listing installed packages');
+        readApp(function (app) {
+            console.log(app.requires);
+        });
+        log.ok();
+    });
+
+    grunt.registerTask('remove', function (packageName) {
+        grunt.task.run('delete:' + packageName, 'unregister:' + packageName, 'refresh');
+
+    });
+
     grunt.registerTask('install', function (packageName) {
-        var done = this.async();
-        var log = grunt.log.write('adding...');
-        // 创建了一个 Package 文件夹 下载到里面去 
-        rimraf('packages/' + packageName, function (error) {
-            if(error){
-                done(false);
-            }else{
-                child = exec('git clone https://github.com/gengen1988/'+packageName+' packages'+'/'+packageName, function(error, stdout, stderr) {
-                    if(error){
-                        done(false);       
-                    }else{
-                        log.write(packageName);
-                        var parpk = grunt.file.readJSON('app.json');
-                        if (parpk.requires.indexOf(packageName)<0) {
-                            parpk.requires.push(packageName);
-                        };
-                        fs.writeFileSync('app.json', JSON.stringify(parpk), {encoding: 'utf-8'});
-                        done();
-                    }
-                });
-            }
-        });
+        grunt.task.run('delete:' + packageName, 'download:' + packageName, 'register:' + packageName, 'refresh');
     });
-    grunt.registerTask('remove', function (packageName){
-        var done = this.async();
-        var log = grunt.log.write('deleting...'); 
-        rimraf('packages/' + packageName, function (error) {
-            if(error){
-                done(false);
-            }else{
-                log.write(packageName);
-                var parpk = grunt.file.readJSON('app.json');
-                var index = parpk.requires.indexOf(packageName);
-                if (index>=0) {
-                    parpk.requires.splice(index,1);
-                };
-                fs.writeFileSync('app.json', JSON.stringify(parpk), {encoding: 'utf-8'});
-                done();
-                log.ok();
-            }
-        });
-    });
+
     grunt.registerTask('default', ['connect']);
 };

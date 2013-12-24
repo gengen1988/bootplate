@@ -1,1 +1,51 @@
-{"name":"Bootplate","indexHtmlPath":"index.html","url":null,"js":[{"path":"cordova.js","remote":true},{"path":"touch/sencha-touch.js","x-bootstrap":true},{"path":"bootstrap.js","x-bootstrap":true},{"path":"app.js","bundle":true,"update":"delta"}],"css":[{"path":"resources/css/app.css","update":"delta"}],"appCache":{"cache":["index.html"],"network":["*"],"fallback":[]},"resources":["config.xml","resources/images","resources/icons","resources/startup"],"ignore":["\\.svn$"],"archivePath":"archive","requires":["ETFramework"],"id":"2cc42d86-158d-43a7-949b-2a48aa71fa5e"}
+{
+    "name": "Bootplate",
+    "indexHtmlPath": "index.html",
+    "url": null,
+    "js": [
+        {
+            "path": "cordova.js",
+            "remote": true
+        },
+        {
+            "path": "touch/sencha-touch.js",
+            "x-bootstrap": true
+        },
+        {
+            "path": "bootstrap.js",
+            "x-bootstrap": true
+        },
+        {
+            "path": "app.js",
+            "bundle": true,
+            "update": "delta"
+        }
+    ],
+    "css": [
+        {
+            "path": "resources/css/app.css",
+            "update": "delta"
+        }
+    ],
+    "appCache": {
+        "cache": [
+            "index.html"
+        ],
+        "network": [
+            "*"
+        ],
+        "fallback": []
+    },
+    "resources": [
+        "config.xml",
+        "resources/images",
+        "resources/icons",
+        "resources/startup"
+    ],
+    "ignore": [
+        "\\.svn$"
+    ],
+    "archivePath": "archive",
+    "requires": [],
+    "id": "2cc42d86-158d-43a7-949b-2a48aa71fa5e"
+}
