@@ -1,7 +1,7 @@
 {
 	"etframework": "https://github.com/gengen1988/etframework.git",
-	"underscore": "https://github.com/gengen1988/etframework.git",
-	"async": "https://github.com/gengen1988/etframework.git",
-	"deft": "https://github.com/gengen1988/etframework.git",
-	"oldfashion": "https://github.com/gengen1988/etframework.git"
+	"underscore": "https://github.com/gengen1988/underscore.git",
+	"async": "https://github.com/gengen1988/async.git",
+	"deft": "https://github.com/gengen1988/deft.git",
+	"oldfashion": "https://github.com/gengen1988/oldfashion.git"
 }
