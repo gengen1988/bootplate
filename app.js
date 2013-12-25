@@ -18,11 +18,7 @@ Ext.application({
     ],
     
     controllers: [
-        'Bootplate.controller.Login'
-    ],
-
-    views: [
-        'Main'
+        'Bootplate.controller.Main'
     ],
 
     icon: {
@@ -46,9 +42,6 @@ Ext.application({
     launch: function() {
         // Destroy the #appLoadingIndicator element
         Ext.fly('appLoadingIndicator').destroy();
-
-        // Initialize the main view
-        Ext.Viewport.add(Ext.create('Bootplate.view.Main'));
     },
 
     onUpdated: function() {
