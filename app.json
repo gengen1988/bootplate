@@ -41,7 +41,7 @@
         "resources/images",
         "resources/icons",
         "resources/startup",
-        "Module"
+        "Dynamic"
     ],
     "ignore": [
         "\\.svn$"
