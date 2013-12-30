@@ -40,7 +40,8 @@
         "config.xml",
         "resources/images",
         "resources/icons",
-        "resources/startup"
+        "resources/startup",
+        "Module"
     ],
     "ignore": [
         "\\.svn$"
