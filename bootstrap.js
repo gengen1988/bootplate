@@ -6,6 +6,10 @@
  */
 Ext.Loader.addClassPathMappings({
   "Bootplate": "app",
+  "Deft": "packages/deft/src/js",
+  "Deft.Component": "packages/deft/src/js/event/LiveEventBus.js",
+  "Deft.InjectableComponent": "packages/deft/src/js/ioc/Injector.js",
+  "Deft.Viewport": "packages/deft/overrides/Viewport.js",
   "Ext": "touch/src",
   "Ext.device.Purchases.Product": "touch/src/device/purchases/Sencha.js",
   "Ext.device.filesystem.DirectoryEntry": "touch/src/device/filesystem/HTML5.js",
@@ -22,6 +26,51 @@ Ext.Loader.addClassPathMappings({
 Ext.ClassManager.addNameAlternateMappings({
   "Bootplate.controller.Main": [],
   "Bootplate.view.Main": [],
+  "Deft.Component": [],
+  "Deft.InjectableComponent": [],
+  "Deft.Viewport": [],
+  "Deft.core.Class": [
+    "Deft.Class"
+  ],
+  "Deft.event.LiveEventBus": [
+    "Deft.LiveEventBus"
+  ],
+  "Deft.event.LiveEventListener": [
+    "Deft.LiveEventListener"
+  ],
+  "Deft.ioc.DependencyProvider": [],
+  "Deft.ioc.Injector": [
+    "Deft.Injector"
+  ],
+  "Deft.log.Logger": [
+    "Deft.Logger"
+  ],
+  "Deft.mixin.Controllable": [],
+  "Deft.mixin.Injectable": [],
+  "Deft.mvc.Application": [
+    "Deft.Application"
+  ],
+  "Deft.mvc.ComponentSelector": [],
+  "Deft.mvc.ComponentSelectorListener": [],
+  "Deft.mvc.Observer": [],
+  "Deft.mvc.ViewController": [
+    "Deft.ViewController"
+  ],
+  "Deft.promise.Chain": [
+    "Deft.Chain"
+  ],
+  "Deft.promise.Deferred": [
+    "Deft.Deferred"
+  ],
+  "Deft.promise.Promise": [
+    "Deft.Promise"
+  ],
+  "Deft.promise.Resolver": [
+    "Deft.Resolver"
+  ],
+  "Deft.util.Function": [
+    "Deft.Function"
+  ],
   "Ext.AbstractComponent": [],
   "Ext.AbstractManager": [],
   "Ext.AbstractPlugin": [],
@@ -751,6 +800,27 @@ Ext.ClassManager.addNameAliasMappings({
   "Bootplate.view.Main": [
     "widget.main"
   ],
+  "Deft.Component": [],
+  "Deft.InjectableComponent": [],
+  "Deft.Viewport": [],
+  "Deft.core.Class": [],
+  "Deft.event.LiveEventBus": [],
+  "Deft.event.LiveEventListener": [],
+  "Deft.ioc.DependencyProvider": [],
+  "Deft.ioc.Injector": [],
+  "Deft.log.Logger": [],
+  "Deft.mixin.Controllable": [],
+  "Deft.mixin.Injectable": [],
+  "Deft.mvc.Application": [],
+  "Deft.mvc.ComponentSelector": [],
+  "Deft.mvc.ComponentSelectorListener": [],
+  "Deft.mvc.Observer": [],
+  "Deft.mvc.ViewController": [],
+  "Deft.promise.Chain": [],
+  "Deft.promise.Deferred": [],
+  "Deft.promise.Promise": [],
+  "Deft.promise.Resolver": [],
+  "Deft.util.Function": [],
   "Ext.AbstractComponent": [],
   "Ext.AbstractManager": [],
   "Ext.AbstractPlugin": [],
@@ -1693,3 +1763,5 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.viewport.Viewport": [],
   "Ext.viewport.WindowsPhone": []
 });
+Ext.setVersion("deft", "0.9.1");
+Ext.Loader.loadScriptFile("packages/deft/overrides/Viewport.js", Ext.emptyFn);;

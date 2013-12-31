@@ -41,12 +41,14 @@
         "resources/images",
         "resources/icons",
         "resources/startup",
-        "Dynamic"
+        "runtime"
     ],
     "ignore": [
         "\\.svn$"
     ],
     "archivePath": "archive",
-    "requires": [],
+    "requires": [
+        "deft"
+    ],
     "id": "2cc42d86-158d-43a7-949b-2a48aa71fa5e"
 }

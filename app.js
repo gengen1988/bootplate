@@ -10,11 +10,16 @@
     will need to resolve manually.
 */
 
+Ext.Loader.setPath({
+    'Runtime': 'runtime'
+});
+
 Ext.application({
     name: 'Bootplate',
 
     requires: [
-        'Ext.MessageBox'
+        'Ext.MessageBox',
+        'Deft.ViewController'
     ],
     
     controllers: [
