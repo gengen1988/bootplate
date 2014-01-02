@@ -38,8 +38,10 @@ grunt refresh            # 手动刷新应用
 
 可用包
 ---------
-- etframework
-
+- etframework https://github.com/gengen1988/etframework
+- deft https://github.com/gengen1988/deft
+- underscore https://github.com/gengen1988/underscore
+- async https://github.com/gengen1988/async
 
 可用插件
 ---------
