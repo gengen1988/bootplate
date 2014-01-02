@@ -41,6 +41,10 @@ grunt refresh            # 手动刷新应用
 - etframework
 
 
+可用插件
+---------
+- BarcodeScanner https://github.com/wildabeast/BarcodeScanner
+
 Changelog
 ----------
 2013-12-24 v1.2.1
