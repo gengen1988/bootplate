@@ -21,9 +21,13 @@ Ext.application({
         'Ext.MessageBox',
         'Deft.ViewController'
     ],
-    
+
     controllers: [
-        'Bootplate.controller.Main'
+        'Main'
+    ],
+
+    profiles: [
+        'Native'
     ],
 
     icon: {

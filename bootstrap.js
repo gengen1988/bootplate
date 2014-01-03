@@ -25,6 +25,8 @@ Ext.Loader.addClassPathMappings({
 });
 Ext.ClassManager.addNameAlternateMappings({
   "Bootplate.controller.Main": [],
+  "Bootplate.controller.native.Main": [],
+  "Bootplate.profile.Native": [],
   "Bootplate.view.Main": [],
   "Deft.Component": [],
   "Deft.InjectableComponent": [],
@@ -797,6 +799,8 @@ Ext.ClassManager.addNameAlternateMappings({
 });
 Ext.ClassManager.addNameAliasMappings({
   "Bootplate.controller.Main": [],
+  "Bootplate.controller.native.Main": [],
+  "Bootplate.profile.Native": [],
   "Bootplate.view.Main": [
     "widget.main"
   ],

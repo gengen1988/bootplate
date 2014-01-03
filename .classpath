@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="app"/>
-	<classpathentry kind="src" path="Dynamic">
+	<classpathentry kind="src" path="runtime"/>
 	<classpathentry kind="output" path="build"/>
 </classpath>

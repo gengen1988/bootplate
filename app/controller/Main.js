@@ -23,5 +23,4 @@ Ext.define('Bootplate.controller.Main', {
 		Ext.Viewport.setActiveItem(view);
 		*/
 	}
-
 });
