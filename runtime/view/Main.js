@@ -3,9 +3,28 @@ Ext.define('Runtime.view.Main', {
 	controller: 'Runtime.controller.Main',
 	config: {
 		items: [{
+            xtype: 'fieldset',
+            items: [{
+                xtype: 'textfield',
+                label: 'username',
+                itemId: 'username'
+            }, {
+                xtype: 'textfield',
+                label: 'password',
+                itemId: 'password'
+            }]
+        }, {
 			xtype: 'button',
-			itemId: 'hello',
-			text: 'hello'
-		}]
+			itemId: 'signin',
+			text: 'signin'
+		}, {
+            xtype: 'button',
+            itemId: 'request',
+            text: 'request'
+        }, {
+            xtype: 'button',
+            itemId: 'signout',
+            text: 'signout'
+        }]
 	}
 });

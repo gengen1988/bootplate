@@ -48,7 +48,8 @@
     ],
     "archivePath": "archive",
     "requires": [
-        "deft"
+        "deft",
+        "etframework"
     ],
     "id": "2cc42d86-158d-43a7-949b-2a48aa71fa5e"
 }

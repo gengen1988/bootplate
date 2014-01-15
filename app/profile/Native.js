@@ -3,7 +3,7 @@ Ext.define('Bootplate.profile.Native', {
     config: {
         controllers: [
             'Main'
-        ],
+        ]
     },
 
     isActive: function () {

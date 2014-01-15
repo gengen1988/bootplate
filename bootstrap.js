@@ -10,6 +10,7 @@ Ext.Loader.addClassPathMappings({
   "Deft.Component": "packages/deft/src/js/event/LiveEventBus.js",
   "Deft.InjectableComponent": "packages/deft/src/js/ioc/Injector.js",
   "Deft.Viewport": "packages/deft/overrides/Viewport.js",
+  "ETFramework": "packages/etframework/src",
   "Ext": "touch/src",
   "Ext.device.Purchases.Product": "touch/src/device/purchases/Sencha.js",
   "Ext.device.filesystem.DirectoryEntry": "touch/src/device/filesystem/HTML5.js",
@@ -73,6 +74,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "Deft.util.Function": [
     "Deft.Function"
   ],
+  "ETFramework.Backend": [],
   "Ext.AbstractComponent": [],
   "Ext.AbstractManager": [],
   "Ext.AbstractPlugin": [],
@@ -825,6 +827,7 @@ Ext.ClassManager.addNameAliasMappings({
   "Deft.promise.Promise": [],
   "Deft.promise.Resolver": [],
   "Deft.util.Function": [],
+  "ETFramework.Backend": [],
   "Ext.AbstractComponent": [],
   "Ext.AbstractManager": [],
   "Ext.AbstractPlugin": [],
@@ -1768,4 +1771,5 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.viewport.WindowsPhone": []
 });
 Ext.setVersion("deft", "0.9.1");
+Ext.setVersion("etframework", "1.0.0");
 Ext.Loader.loadScriptFile("packages/deft/overrides/Viewport.js", Ext.emptyFn);;
