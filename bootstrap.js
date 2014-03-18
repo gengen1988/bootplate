@@ -6,10 +6,6 @@
  */
 Ext.Loader.addClassPathMappings({
   "Bootplate": "app",
-  "Deft": "packages/deft/src/js",
-  "Deft.Component": "packages/deft/src/js/event/LiveEventBus.js",
-  "Deft.InjectableComponent": "packages/deft/src/js/ioc/Injector.js",
-  "Deft.Viewport": "packages/deft/overrides/Viewport.js",
   "ETFramework": "packages/etframework/src",
   "Ext": "touch/src",
   "Ext.device.Purchases.Product": "touch/src/device/purchases/Sencha.js",
@@ -26,55 +22,16 @@ Ext.Loader.addClassPathMappings({
 });
 Ext.ClassManager.addNameAlternateMappings({
   "Bootplate.controller.Main": [],
-  "Bootplate.controller.native.Main": [],
-  "Bootplate.profile.Native": [],
+  "Bootplate.model.Message": [],
+  "Bootplate.store.Message": [],
+  "Bootplate.util.Address": [
+    "Address"
+  ],
+  "Bootplate.util.Backend": [],
+  "Bootplate.view.Drawer": [],
   "Bootplate.view.Main": [],
-  "Deft.Component": [],
-  "Deft.InjectableComponent": [],
-  "Deft.Viewport": [],
-  "Deft.core.Class": [
-    "Deft.Class"
-  ],
-  "Deft.event.LiveEventBus": [
-    "Deft.LiveEventBus"
-  ],
-  "Deft.event.LiveEventListener": [
-    "Deft.LiveEventListener"
-  ],
-  "Deft.ioc.DependencyProvider": [],
-  "Deft.ioc.Injector": [
-    "Deft.Injector"
-  ],
-  "Deft.log.Logger": [
-    "Deft.Logger"
-  ],
-  "Deft.mixin.Controllable": [],
-  "Deft.mixin.Injectable": [],
-  "Deft.mvc.Application": [
-    "Deft.Application"
-  ],
-  "Deft.mvc.ComponentSelector": [],
-  "Deft.mvc.ComponentSelectorListener": [],
-  "Deft.mvc.Observer": [],
-  "Deft.mvc.ViewController": [
-    "Deft.ViewController"
-  ],
-  "Deft.promise.Chain": [
-    "Deft.Chain"
-  ],
-  "Deft.promise.Deferred": [
-    "Deft.Deferred"
-  ],
-  "Deft.promise.Promise": [
-    "Deft.Promise"
-  ],
-  "Deft.promise.Resolver": [
-    "Deft.Resolver"
-  ],
-  "Deft.util.Function": [
-    "Deft.Function"
-  ],
   "ETFramework.Backend": [],
+  "ETFramework.app.Controller": [],
   "Ext.AbstractComponent": [],
   "Ext.AbstractManager": [],
   "Ext.AbstractPlugin": [],
@@ -801,33 +758,18 @@ Ext.ClassManager.addNameAlternateMappings({
 });
 Ext.ClassManager.addNameAliasMappings({
   "Bootplate.controller.Main": [],
-  "Bootplate.controller.native.Main": [],
-  "Bootplate.profile.Native": [],
+  "Bootplate.model.Message": [],
+  "Bootplate.store.Message": [],
+  "Bootplate.util.Address": [],
+  "Bootplate.util.Backend": [],
+  "Bootplate.view.Drawer": [
+    "widget.drawer"
+  ],
   "Bootplate.view.Main": [
     "widget.main"
   ],
-  "Deft.Component": [],
-  "Deft.InjectableComponent": [],
-  "Deft.Viewport": [],
-  "Deft.core.Class": [],
-  "Deft.event.LiveEventBus": [],
-  "Deft.event.LiveEventListener": [],
-  "Deft.ioc.DependencyProvider": [],
-  "Deft.ioc.Injector": [],
-  "Deft.log.Logger": [],
-  "Deft.mixin.Controllable": [],
-  "Deft.mixin.Injectable": [],
-  "Deft.mvc.Application": [],
-  "Deft.mvc.ComponentSelector": [],
-  "Deft.mvc.ComponentSelectorListener": [],
-  "Deft.mvc.Observer": [],
-  "Deft.mvc.ViewController": [],
-  "Deft.promise.Chain": [],
-  "Deft.promise.Deferred": [],
-  "Deft.promise.Promise": [],
-  "Deft.promise.Resolver": [],
-  "Deft.util.Function": [],
   "ETFramework.Backend": [],
+  "ETFramework.app.Controller": [],
   "Ext.AbstractComponent": [],
   "Ext.AbstractManager": [],
   "Ext.AbstractPlugin": [],
@@ -1770,6 +1712,4 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.viewport.Viewport": [],
   "Ext.viewport.WindowsPhone": []
 });
-Ext.setVersion("deft", "0.9.1");
 Ext.setVersion("etframework", "1.0.0");
-Ext.Loader.loadScriptFile("packages/deft/overrides/Viewport.js", Ext.emptyFn);;

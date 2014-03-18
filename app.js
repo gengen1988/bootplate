@@ -10,23 +10,17 @@
     will need to resolve manually.
 */
 
-Ext.Loader.setPath({
-    'Runtime': 'runtime'
+Ext.Loader.setConfig({
+    paths: {
+        'Runtime': 'runtime'
+    },
+    disableCaching: false
 });
 
 Ext.application({
     name: 'Bootplate',
-    requires: [
-        'ETFramework.Backend',
-        'Ext.form.FieldSet',
-        'Ext.MessageBox',
-        'Deft.ViewController'
-    ],
     controllers: [
         'Main'
-    ],
-    profiles: [
-        'Native'
     ],
 
     launch: function() {

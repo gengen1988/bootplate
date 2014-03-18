@@ -1,26 +1,27 @@
 Ext.define('Bootplate.controller.Main', {
-	extend: 'Ext.app.Controller',
+	extend: 'ETFramework.app.Controller',
 	requires: [
-	    'Bootplate.view.Main'
+        'Bootplate.util.Backend',
+        'Bootplate.util.Address'
 	],
 	config: {
-		routes: {
-			'': 'entry',
-			'main': 'showMain'
-		}
+		views: [
+		    'Drawer'
+		]
 	},
+
+	configRoutes: function (routes) {
+		routes = this.callParent(arguments);
+		routes[Address.ENTRY] = 'entry';
+		routes[Address.MAIN] = 'showMain';
+		return routes;
+	},
+
 	entry: function () {
-		this.redirectTo('main');
+		this.redirectTo(Address.MAIN);
 	},
+
 	showMain: function () {
-		Ext.require('Runtime.view.Main', function () {
-			Ext.Viewport.setActiveItem(Ext.create('Runtime.view.Main'));
-		});
-		/*
-		var view = Ext.Viewport.query('main')[0] || {
-			xtype: 'main'
-		};
-		Ext.Viewport.setActiveItem(view);
-		*/
+		this.showView('drawer');
 	}
 });

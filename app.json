@@ -25,6 +25,9 @@
         {
             "path": "resources/css/app.css",
             "update": "delta"
+        },
+        {
+            "path": "resources/css/chart.css"
         }
     ],
     "appCache": {
@@ -48,7 +51,6 @@
     ],
     "archivePath": "archive",
     "requires": [
-        "deft",
         "etframework"
     ],
     "id": "2cc42d86-158d-43a7-949b-2a48aa71fa5e"

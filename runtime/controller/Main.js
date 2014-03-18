@@ -3,61 +3,43 @@ Ext.define('Runtime.controller.Main', {
     requires: [
         'ETFramework.Backend'
     ],
+
 	control: {
-		signin: {
-			tap: 'tapSignIn'
-		},
-        signout: {
-            tap: 'tapSignOut'
-        },
-        request: {
-            tap: 'tapRequest'
+        takePhoto: {
+            tap: 'tapPhoto'
         }
 	},
+    tapPhoto: function () {
+        var view = this.getView();
+        var album = view.down('#fromAlbum').getValue();
+        var orientation = view.down('#fixOrientation').getValue();
+        var size = view.down('#size').getValue()[0];
 
-    init: function () {
-        this.callParent(arguments);
-
-        if (ETFramework.Backend.isSignIn()) {
-            this.getView().down('#username').setValue(localStorage.username);
-            this.getView().down('#password').setValue(localStorage.password);
+        var sourceType = Camera.PictureSourceType.CAMERA;
+        if (album == 1) {
+            sourceType = Camera.PictureSourceType.PHOTOLIBRARY;
         }
-    },
 
-	tapSignIn: function () {
-		console.log('==== login test ====');
-        var username = this.getView().down('#username').getValue();
-        var password = this.getView().down('#password').getValue();
+        var correctOrientation = false;
+        if (orientation == 1) {
+            correctOrientation = true;
+        }
 
-        ETFramework.Backend.signIn({
-            params: {
-                username: username,
-                password: password
-            },
-            callback: this.signInHandler
-        });
-	},
-    tapSignOut: function () {
-        console.log('==== logout test ====');
-        ETFramework.Backend.signOut();
-
-        this.getView().down('#username').reset();
-        this.getView().down('#password').reset();
-    },
-    tapRequest: function () {
-        console.log('==== request test ====');
-        ETFramework.Backend.request({
-            bo: 'edu.self.AuthTestBO',
-            params: {
-                ni: 'hao'
-            },
-            callback: this.requestHandler
+        navigator.camera.getPicture(this.cameraSuccess.bind(this), this.cameraFailure, {
+            quality: 100,
+            sourceType: sourceType,
+            correctOrientation: correctOrientation,
+            targetHeight: size,
+            destinationType: Camera.DestinationType.DATA_URL
         });
     },
-    signInHandler: function (err) {
-        console.log(err.message);
+    cameraSuccess: function (imageData) {
+        var preview = this.getView().down('#preview');
+
+        preview.setSrc('data:image/jpeg;base64,' + imageData)
     },
-    requestHandler: function (err, str, nub) {
-        console.log(err.message);
+    cameraFailure: function () {
+        Ext.Msg.alert('error');
     }
+
 });
